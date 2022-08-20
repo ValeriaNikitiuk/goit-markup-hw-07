@@ -19,7 +19,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-   <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/main.min.css" />
   </head>
   <body>
@@ -84,7 +84,7 @@
               <button class="navigator__list_btn" type="button">Дизайн</button>
             </li>
             <li class="navigator__list">
-              <button class="navigator__list_btn type="button">
+              <button class="navigator__list_btn" type="button">
                 Маркетинг
               </button>
             </li>
@@ -125,7 +125,9 @@
                   <img src="./img/img12.jpg" alt="постер" width="370" />
                 </div>
                 <div class="grid__inform">
-                  <h2 class="grid__inform__title">Постер New Orlean vs Golden Star</h2>
+                  <h2 class="grid__inform__title">
+                    Постер New Orlean vs Golden Star
+                  </h2>
                   <p class="grid__inform__text">Дизайн</p>
                 </div>
               </a>
@@ -201,7 +203,9 @@
                   <img src="./img/img16.jpg" alt="сайт" width="370" />
                 </div>
                 <div class="grid__inform">
-                  <h2 class="grid__inform__title">Inspiration has no Borders</h2>
+                  <h2 class="grid__inform__title">
+                    Inspiration has no Borders
+                  </h2>
                   <p class="grid__inform__text">Веб-сайт</p>
                 </div>
               </a>
@@ -286,7 +290,9 @@
                 >
               </li>
               <li class="footer-list__item">
-                <a href="mailto:info@example.com" class="footer-list__communication"
+                <a
+                  href="mailto:info@example.com"
+                  class="footer-list__communication"
                   >info@example.com</a
                 >
               </li>
@@ -303,7 +309,7 @@
           <ul class="network">
             <li>
               <a class="network__link network__link--color" href="">
-                <svg  width="20px" height="20px">
+                <svg width="20px" height="20px">
                   <use href="./img/symbol-defs.svg#icon-instagram-2"></use>
                 </svg>
               </a>
@@ -324,7 +330,7 @@
             </li>
             <li>
               <a class="network__link network__link--color" href="">
-                <svg  width="20px" height="20px">
+                <svg width="20px" height="20px">
                   <use href="./img/symbol-defs.svg#icon-linkedin-1"></use>
                 </svg>
               </a>
@@ -332,22 +338,23 @@
           </ul>
         </div>
         <form class="footer-forms">
-          <label for="email" class="footer-forms__label">
-            Підпишіться на розсилку
-             <div class="footer-forms__box"> <input
-              type="email"
-              class="footer-forms__box__input"
-              name="email"
-              id="email"
-              placeholder="E-mail"
-            />
-          </label>
-          <button class="footer-forms__button" type="submit">
-            Підписатися
-            <svg class="footer-forms__button__svg" width="24" height="24">
-              <use href="./img/symbol-defs.svg#icon-icon-send"></use>
-            </svg>
-          </button></div>  
+          <div class="footer-forms__box">
+            <label for="emaiil" class="footer-forms__label">
+              Підпишіться на розсилку
+              <input
+                type="email"
+                class="footer-forms__box__input"
+                name="email"
+                id="emaiil"
+                placeholder="E-mail"
+            /></label>
+            <button class="footer-forms__btn" type="submit">
+              Підписатися
+              <svg class="footer-forms__btn__svg" width="24" height="24">
+                <use href="./img/symbol-defs.svg#icon-icon-send"></use>
+              </svg>
+            </button>
+          </div>
         </form>
       </div>
     </footer>

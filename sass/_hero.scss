@@ -19,11 +19,8 @@
     margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 44px;
-    line-height: 1.36;
-    letter-spacing: 0.06em;
+    @include font(null, 44px, 1.36, 0.06em);
     text-transform: uppercase;
-
     color: var(--secondary-text-color);
 }
 
@@ -36,76 +33,23 @@
     transition-property: color;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     animation-duration: 250ms;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.87;
+    @include font(700, 16px, 1.87, 0.06em);
     border: none;
-    letter-spacing: 0.06em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     background-color: var(--accent-text-color);
     color: var(--secondary-text-color);
+    &:hover,
+        &:focus {
+            background-color: var(--accent-text-color);
+            color: var(--secondary-text-color);
+        }
 }
 
 
-.container__btn:hover,
-.container__btn:focus {
-    background-color: var(--accent-text-color);
-    color: var(--secondary-text-color);
-}
-
-.backdrop {
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: opacity 250ms;
-
-    background-color: rgba(0, 0, 0, 0.2);
-
-}
 
 
-/* ________________ЗРОБИТИ МОДЕЛЬНЕ ВІКНО НЕВИДИМИМ_____ */
 
-.backdrop.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-
-}
-
-.backdrop__modal {
-    position: absolute;
-    display: flex;
-    padding: 40px;
-    width: 528px;
-    height: 581px;
-    top: 50%;
-    left: 50%;
-    transition: visibility 250ms;
-    transform: translate(-50%, -50%);
-    background-color: var(--secondary-text-color);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-}
-
-.modal-close {
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    right: 8px;
-    top: 8px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    cursor: pointer;
-    background-color: var(--secondary-text-color);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
 
 .form {
     width: 448px;
@@ -129,11 +73,12 @@
     outline: none;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+    &:focus {
+            border-color: var(--accent-text-color);
+        }
 }
 
-.form__labale__textarea:focus {
-    border-color: var(--accent-text-color);
-}
+
 
 .form-div__checkbox {
     /* -webkit-appearance: none;
@@ -152,21 +97,15 @@
 }
 
 ::-webkit-input-placeholder {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.16;
-    letter-spacing: 0.01em;
+    @include font(400, 12px, 1.16, 0.01em);
     color: rgba(117, 117, 117, 0.5);
 }
 
 .form__title {
     margin-bottom: 12px;
     font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 1.15;
+    @include font(700, 20px, 1.15, 0.03em);
     text-align: center;
-    letter-spacing: 0.03em;
     color: var(--primary-text-color);
 }
 
@@ -183,15 +122,14 @@
     cursor: pointer;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+    &:focus {
+            border-color: 1 px solid #2196f3;
+        }
 }
 
-.form__labale__input:focus {
-    border-color: 1 px solid #2196f3;
-}
 
-.form__labale__input:focus~.form__labale__icon {
-    fill: var(--accent-text-color);
-}
+
+
 
 .form__labale__icon {
     fill: var(--primary-text-color);
@@ -213,23 +151,16 @@
     display: block;
     margin-bottom: 10px;
     font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.16;
-    letter-spacing: 0.01em;
+    @include font(400, 12px, 1.16, 0.01em);
     color: var(--secondary-accent-color)
 }
 
 .form-div__check {
     text-align: left;
     position: relative;
-    display: flex;
-    align-items: center;
+    @extend %algin-list;
     font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 2;
-    letter-spacing: 0.03em;
+    @include font(400, 14px, 2, 0.03em);
     color: var(--secondary-accent-color)
 }
 
@@ -237,18 +168,18 @@
     position: absolute;
     left: 12px;
     bottom: 11px;
+    .form__labale__input:focus~ & {
+            fill: var(--accent-text-color);
+        }
 }
 
 .form-div__button {
     width: 200px;
     height: 50px;
     background: var(--accent-text-color);
-    font-weight: 700;
-    font-size: 16px;
+    @include font(700, 16px, 1.87, 0.06em);
     margin-left: 124px;
     margin-right: 124px;
-    line-height: 1.87;
-    letter-spacing: 0.06em;
     cursor: pointer;
     border: none;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -256,12 +187,12 @@
     background: var(--accent-text-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
+    &:focus {
+    
+            background-color: #188CE8;
+        }
 }
 
-.form-div__button:focus {
-
-    background-color: #188CE8;
-}
 
 
 
@@ -301,11 +232,3 @@
     text-decoration: underline;
 }
 
-.modal-close__icon {
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-}
-
-.modal-close__icon:hover {
-    fill: var(--accent-text-color);
-}
